@@ -1,0 +1,11 @@
+logging:
+  level:
+    org.springframework: debug
+
+demo:
+  security:
+    state: DENY_ALL
+    publicPaths: /v2/api-docs, /swagger-ui.html, /info, /health
+    roles:
+      - { path: /v1/**, role: USER }
+      - { path: /admin, role: ADMIN }
